@@ -8,7 +8,7 @@ run `rt_multi-agent-sarsalambda.py` directly.
 1. `maze_env_sarsa_multi_agent.py`: the maze map environment for RL simulation
 
 2. `RL_brain_sarsalambda_mul_v2.py`: the states, action spaces and policy store of the UAV agents.
-## cite this work
+## Cite this work
 ```BibTeX
 @inproceedings{liu2021solving,
   title={Solving a Multi-robot Search Problem with Bionic Sarsa Algorithm and Artificial Potential Field},
