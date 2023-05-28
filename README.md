@@ -3,6 +3,7 @@
 This program aims to solve a kind of multi-agent path planning scheme and it is one of the scenarios we constructed in our recent research. Recently, we have published one article on the Chinese Automation Conference (CAC 2021), and the program is part of the simulation of that article.
 ## How to run?
 ### the framework file
+run `pip install -r requirements.txt` to install the required packages
 run `rt_multi-agent-sarsalambda.py` directly.
 ### the supporting files
 1. `maze_env_sarsa_multi_agent.py`: the maze map environment for RL simulation
