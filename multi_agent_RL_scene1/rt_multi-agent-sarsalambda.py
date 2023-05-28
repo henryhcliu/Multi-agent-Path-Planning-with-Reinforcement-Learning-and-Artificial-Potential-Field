@@ -10,6 +10,7 @@ from RL_brain_sarsalambda_mul_v2 import SarsaTable
 import numpy as np
 import pandas as pd
 import math
+import os
 
 def calcu_dis(obs):
     dis = np.zeros(3)
@@ -332,11 +333,11 @@ if __name__ == "__main__":
     MAZE_H = 10
     MAZE_W = 10
     RL1 = SarsaTable(actions=list(range(env.n_actions)))
-    RL1.q_table=pd.read_csv('q_table_SarsLambda_100_1_1_9_3',names=env.action_space) # This line for test 
+    RL1.q_table=pd.read_csv(os.path.join(os.path.dirname(__file__), 'q_table_SarsLambda_100_1_1_9_3'),names=env.action_space) # This line for test
     RL2 = SarsaTable(actions=list(range(env.n_actions)))
-    RL2.q_table=pd.read_csv('q_table_SarsLambda_100_1_4_10_6',names=env.action_space) # This line for test 
+    RL2.q_table=pd.read_csv(os.path.join(os.path.dirname(__file__), 'q_table_SarsLambda_100_1_4_10_6'),names=env.action_space) # This line for test
     RL3 = SarsaTable(actions=list(range(env.n_actions)))
-    RL3.q_table=pd.read_csv('q_table_SarsLambda_100_1_7_6_9',names=env.action_space) # This line for test 
+    RL3.q_table=pd.read_csv(os.path.join(os.path.dirname(__file__), 'q_table_SarsLambda_100_1_7_6_9'),names=env.action_space) # This line for test
 
     env.after(10, update)
     env.mainloop()

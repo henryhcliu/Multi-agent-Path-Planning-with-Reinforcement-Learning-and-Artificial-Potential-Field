@@ -14,6 +14,7 @@ import numpy as np
 import time
 #import sys
 import tkinter as tk
+import os
 
 
 UNIT = 40   # pixels
@@ -33,7 +34,7 @@ class Maze(tk.Tk, object):
         self.n_actions = len(self.action_space)
         self.title('MAPP Simulation System v1.0')
         self.geometry('{0}x{1}'.format(MAZE_H * UNIT, MAZE_H * UNIT))
-        self.iconbitmap('HITlogoblue.ico')
+        self.iconbitmap(os.path.join(os.path.dirname(__file__),'HITlogoblue.ico'))
         self._build_maze()
         self.termi = ['terminal1','terminal2','terminal3','terminal']
         #global self.UAV_1
@@ -75,7 +76,7 @@ class Maze(tk.Tk, object):
 
         # create oval 1
         global MBase_image 
-        MBase_image = tk.PhotoImage(file = 'MBase.gif')
+        MBase_image = tk.PhotoImage(file = os.path.join(os.path.dirname(__file__),'MBase.gif'))
         oval1_center = origin + np.array([UNIT * 8, UNIT * 2])
         self.oval1 = self.canvas.create_rectangle(
             oval1_center[0] - 15, oval1_center[1] - 15,
@@ -104,7 +105,7 @@ class Maze(tk.Tk, object):
         self.done = np.array([0,0,0])
 
         # create red rect 1
-        image_file = tk.PhotoImage(file = 'UAV_1.gif')
+        image_file = tk.PhotoImage(file = os.path.join(os.path.dirname(__file__),'UAV_1.gif'))
         self.UAV_1 = self.canvas.create_image(20, 20, anchor='center',image=image_file)
         rect1_center = origin + np.array([0, 0])
         self.rect1 = self.canvas.create_oval(
@@ -147,7 +148,7 @@ class Maze(tk.Tk, object):
         self.canvas.delete(self.UAV_2)
         self.canvas.delete(self.UAV_3)
         global MBase_image
-        MBase_image = tk.PhotoImage(file='MBase.gif')
+        MBase_image = tk.PhotoImage(file=os.path.join(os.path.dirname(__file__),'MBase.gif'))
         origin = np.array([20, 20])
         # creat oval 1
         oval1_center = origin + np.array([UNIT * 8, UNIT * 2])
@@ -164,7 +165,7 @@ class Maze(tk.Tk, object):
         
         # create red rect 1
         global image_file
-        image_file = tk.PhotoImage(file='UAV_1.gif')
+        image_file = tk.PhotoImage(file=os.path.join(os.path.dirname(__file__),'UAV_1.gif'))
 
         
         rect1_center = origin + np.array([0, 0])
